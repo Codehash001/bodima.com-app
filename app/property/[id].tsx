@@ -313,8 +313,8 @@ export default function PropertyDetailsScreen() {
                 if (insErr) throw insErr;
                 convId = created!.conversation_id as string;
               }
-              // 3) Navigate to thread
-              router.push({ pathname: '/messages/[id]', params: { id: convId! } });
+              // 3) Navigate to thread (also pass pid for header property chip)
+              router.push({ pathname: '/messages/[id]', params: { id: convId!, pid: propId } });
             } catch (e) { /* noop */ }
           }}>
             <Text style={[styles.ctaText]}>Contact owner</Text>
